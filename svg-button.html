@@ -1,0 +1,361 @@
+<!doctype html>
+<!-- http://www.molamil.com/frontpage -->
+<html lang="en" class="no-touch">
+	<head>
+		<style>
+nav#menu-button #bg, nav#menu-button #tagline {
+    transition: -webkit-transform 0.4s cubic-bezier(0.23, 1, 0.32, 1) 0s;
+}
+body {
+	background-image: url('https://i0.wp.com/www.modebulb.com/wp-content/uploads/2015/12/MorganMaassen_Travel_1.jpg');
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	font-family: "Open Sans","Helvetica Neue", Helvetica, "sans-serif";
+	height: 100vh;
+	margin: 0;
+	padding: 0;
+}
+html.no-touch nav#back-button:hover {
+    cursor: pointer;
+}
+html.no-touch nav#back-button:hover .bg {
+    transform: scale(1.1);
+}
+nav#menu-button {
+    cursor: pointer;
+    height: 100px;
+    position: fixed;
+    right: 0;
+    width: 100px;
+    z-index: 500;
+}
+nav#menu-button #bg {
+    fill: #333;
+    height: 55px;
+    left: 50%;
+    opacity: 0.1;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    transition: transform 0.4s cubic-bezier(0.23, 1, 0.32, 1) 0s;
+    width: 55px;
+}
+nav#menu-button #tagline {
+    display: none;
+    position: relative;
+    transition: transform 0.4s cubic-bezier(0.23, 1, 0.32, 1) 0s;
+}
+nav#menu-button #tagline #dot {
+    fill: #000;
+}
+nav#menu-button #tagline text {
+    fill: #000;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.077em;
+}
+html.safari nav#menu-button #tagline text {
+    letter-spacing: -0.009em;
+}
+html.ipad nav#menu-button #tagline text {
+    letter-spacing: 0.032em;
+}
+nav#menu-button .rotate {
+    height: 100%;
+    position: relative;
+    transition: transform 0.4s cubic-bezier(0.63, 0.29, 0.17, 1.345) 0s;
+    width: 100%;
+}
+html.no-touch nav#menu-button:hover #bg {
+    transform: translate(-50%, -50%) scale(1.06);
+}
+html.no-touch nav#menu-button:hover #tagline {
+    transform: scale(1.03);
+}
+nav#menu-button.open .rotate, nav#menu-button.shown .rotate {
+    transform: rotate(90deg);
+}
+nav#menu-button .burger {
+    background-color: rgba(255,255,255,0.7);
+    height: 2.5px;
+    transform: translate(-50%, -50%);
+    transition: transform 0.4s cubic-bezier(0.63, 0.29, 0.17, 1.345) 0s, top 0.4s cubic-bezier(0.63, 0.29, 0.17, 1.345) 0s;
+    width: 29px;
+    will-change: transform;
+}
+nav#menu-button .burger, nav#menu-button .burger.middle {
+    left: 50%;
+    position: absolute;
+    top: 50%;
+}
+nav#menu-button .burger.middle {
+    transform: translate(-50%, -50%);
+}
+nav#menu-button .burger.top {
+    top: 43%;
+}
+nav#menu-button .burger.bottom {
+    top: 57%;
+}
+@media (min-width: 700px) {
+	nav#menu-button {
+	    right: calc(50% - 50px);
+	    top: 35px;
+	}
+	nav#menu-button #bg {
+	    height: 100%;
+	    width: 100%;
+	}
+	nav#menu-button #tagline {
+	    display: block;
+	}
+	nav#menu-button .burger {
+	    height: 3px;
+	    transition: transform 0.25s cubic-bezier(0.63, 0.29, 0.17, 1.345) 0s, top 0.25s cubic-bezier(0.63, 0.29, 0.17, 1.345) 0s;
+	    width: 37px;
+	}
+	nav#menu-button .burger.top {
+	    top: 40%;
+	}
+	nav#menu-button .burger.bottom {
+	    top: 60%;
+	}
+	html.no-touch nav#menu-button:hover #bg {
+	    transform: translate(-50%, -50%) scale(1.255);
+	}
+	html.no-touch nav#menu-button:hover #tagline {
+	    transform: scale(1.145);
+	}
+	html.no-touch nav#menu-button:hover .middle {
+	    transform: translate(-50%, -50%) scaleX(1.17);
+	}
+	html.no-touch nav#menu-button:hover .top {
+	    transform: translate(-50%, -170%);
+	}
+	html.no-touch nav#menu-button:hover .bottom {
+	    transform: translate(-50%, 70%);
+	}
+	.mobile-nav .height .content, footer.menu .height .content {
+		top: 32% !important;
+	}
+}
+nav#menu-button.open .middle, nav#menu-button.shown .middle {
+    /*transform: translateX(-50%) translateY(-50%) rotate(45deg) scaleX(0);*/
+    opacity: 0;
+}
+nav#menu-button.open .top, nav#menu-button.shown .top {
+    top: 50%;
+    transform: translateX(-50%) translateY(-50%) rotate(135deg);
+    background-color: rgba(255,255,255,0.9);
+}
+nav#menu-button.open .bottom, nav#menu-button.shown .bottom {
+    top: 50%;
+    transform: translateX(-50%) translateY(-50%) rotate(225deg);
+    background-color: rgba(255,255,255,0.9);
+}
+html.no-touch nav#menu-button.open:hover #bg, html.no-touch nav#menu-button.shown:hover #bg {
+    transform: translate(-50%, -50%) scale(0.9);
+}
+html.no-touch nav#menu-button.open:hover #tagline, html.no-touch nav#menu-button.shown:hover #tagline {
+    transform: scale(0.85);
+}
+html.no-touch nav#menu-button.open:hover .middle, html.no-touch nav#menu-button.shown:hover .middle {
+    /*transform: translateX(-50%) translateY(-50%) rotate(45deg) scaleX(0);*/
+    opacity: 0;
+}
+html.no-touch nav#menu-button.open:hover .top, html.no-touch nav#menu-button.shown:hover .top {
+    top: 50%;
+    transform: translateX(-50%) translateY(-50%) rotate(135deg) scaleX(0.8);
+}
+html.no-touch nav#menu-button.open:hover .bottom, html.no-touch nav#menu-button.shown:hover .bottom {
+    top: 50%;
+    transform: translateX(-50%) translateY(-50%) rotate(225deg) scaleX(0.8);
+}
+.mobile-nav, footer.menu {
+    height: 110vh;
+    width: 100%;
+    margin-top: -110vh;
+    overflow: hidden;
+    pointer-events: none;
+    position: absolute;
+}
+.mobile-nav.wrapper, footer.menu.wrapper {
+    padding: 0;
+}
+.mobile-nav .height, footer.menu .height {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    height: 100vh;
+    pointer-events: auto;
+}
+.mobile-nav .height.shown, footer.menu .height.shown {
+    transform: translateY(0px);
+}
+.mobile-nav .height .content, footer.menu .height .content {
+    /*height: 350px;*/
+    padding-top: 100px;
+    position: relative;
+    top: 20%;
+    transform: translateY(-50%);
+}
+
+footer.menu {
+	transition: margin 0.55s cubic-bezier(0.23, 1, 0.32, 1) 0s;
+}
+footer.menu.open {
+    background-color: rgba(255,255,125,0.45);
+    margin-top: 0;
+    position: fixed;
+    top: 0;
+    z-index: 200;
+    transition: translate(0,-500px);
+}
+footer .social {
+	text-align: center;
+}
+
+.action-bar-wrapper {
+	position: fixed;
+	bottom: 0;
+	width: 100%;
+}
+.action-bar-scrim {
+	background: -ms-linear-gradient(right, rgba(108,108,108,0) 0%, rgba(36, 75, 131, 1) 100%);
+	background: linear-gradient(to right, rgba(108,108,108,0) 0%, rgba(36, 75, 131, 1) 100%);
+	content: ' ';
+	height: 52px;
+	pointer-events: none;
+	position: absolute;
+	right: 0;
+	width: 125px;
+	z-index: 10;
+}
+.action-bar {
+    -ms-transform: translateZ(0);
+    -webkit-overflow-scrolling: touch;
+    -webkit-transform: translateZ(0);
+    background: rgba(36, 75, 131, 0.9);
+    height: 52px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    position: relative;
+    transform: translateZ(0);
+}
+.action-bar-menu {
+	height: 50px;
+	list-style: none;
+	margin-bottom: 2px;
+	margin-top: 0;
+	min-width: 100%;
+	padding-right: 90px;
+	position: absolute;
+	text-align: center;
+	transition: all 200ms cubic-bezier(0.57, 0.06, 0.05, 0.95);
+	white-space: nowrap;
+}
+.action-bar-menu li {
+	display: inline-block;
+}
+.action-bar-menu li a {
+	color: rgba(255,255,255,0.8);
+	font-size: 16px;
+	font-weight: 400;
+	letter-spacing: 0.05em;
+	line-height: 50px;
+	padding: 0 10px;
+	position: relative;
+	text-decoration: none;
+	text-rendering: optimizeLegibility;
+	text-transform: uppercase;
+}
+		</style>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+	</head>
+	<body>
+
+<div class="action-bar-wrapper">
+  <div class="action-bar-scrim"></div>
+  <nav class="action-bar" role="presentation">
+    <ul class="action-bar-menu" id="SiteNav" role="navigation">
+		<li>
+		<a href="#" class="action-bar-link">Home</a>
+		</li>
+
+		<li>
+		<a href="#" class="action-bar-link">Products</a>
+		</li>
+
+		<li>
+		<a href="#" class="action-bar-link">About Us</a>
+		</li>
+
+		<li>
+		<a href="#" class="action-bar-link">Contact</a>
+		</li>
+
+		<li>
+		<a href="#" class="action-bar-link">Support</a>
+		</li>
+    </ul>
+  </nav>
+</div>
+		
+	<nav id="menu-button"><!-- plus or close-->
+	    <!--<div class="fill"></div>-->
+	    <!--<svg id="circle" height="100" width="100">-->
+	        <!--<circle cx="50" cy="50" r="50" />-->
+	    <!--</svg>-->
+	    <div class="rotate">
+	        <svg id="bg" xmlns="http://www.w3.org/2000/svg" xmlns:xhtml="http://www.w3.org/1999/xhtml"
+	             xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1"
+	             width="100px" height="100px"
+	             viewBox="0 0 100 100"
+	             preserveAspectRatio="xMinYMin"
+	                >
+	            <circle cx="50" cy="50" r="50"></circle>
+	        </svg>
+	        <svg id="tagline" xmlns="http://www.w3.org/2000/svg" xmlns:xhtml="http://www.w3.org/1999/xhtml"
+	             xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1"
+	             width="100px" height="100px"
+	             viewBox="0 0 100 100"
+	             preserveAspectRatio="xMinYMin"
+	                >
+	            <defs>
+	                <path id="textPath" transform="translate(16 16)"
+	                      d="M0,34C0,15.2,15.2,0,34,0c18.8,0,34,15.2,34,34S52.8,68,34,68S0,52.8,0,34z"></path>
+	                <!--<circle id="textPath" cx="50" cy="50" r="40" />-->
+	            </defs>
+	            <text x="0" y="0" text-anchor="start" textLength="201">
+	                <textPath xlink:href="#textPath" startOffset="3%">PHORESIA.ORG SINCE 2006</textPath>
+	            </text>
+	            <circle id="dot" cx="12" cy="50" r="1.5"></circle>
+	        </svg>
+	        <div class="burger middle"></div>
+	    </div>
+	    <div class="burger top"></div>
+	    <div class="burger bottom"></div>
+	</nav>
+	
+	<footer class="wrapper menu">
+	    <div class="height">
+	        <div class="social">
+	            <div class="content">
+	                <h2>Let's Keep in Touch</h2>
+	                <p>Email</p>
+	                <p>Social Links</p>
+	                <p>Newsletter Signup</p>
+	            </div>
+	        </div>
+	    </div>
+	</footer>
+	
+	<script>
+		$( "nav#menu-button" ).click(function() {
+			$( this ).toggleClass( "open" );
+			$( "footer.wrapper" ).toggleClass( "open" );
+		});
+	</script>
+	</body>
+</html>
