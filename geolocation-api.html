@@ -44,21 +44,24 @@
 				var map = new mapboxgl.Map({
 					container: 'map',
 					style: 'mapbox://styles/mapbox/streets-v10',
-					center: [lat,long],
+					center: [long,lat],
 					zoom: 3
 				});
 
 				var geojson = {
-				    type: 'Feature',
-				    geometry: {
-				      type: 'Point',
-				      coordinates: [-96, 37.8] // starting position
-				    },
-				    properties: {
-				      title: 'Your Geolocation',
-				      description: 'Where your browser thinks you are'
-				    }
-				}
+					type: 'FeatureCollection',
+  					features: [{
+					    type: 'Feature',
+					    geometry: {
+					      type: 'Point',
+					      coordinates: [-96, 37.8] // starting position
+					    },
+					    properties: {
+					      title: 'Your Geolocation',
+					      description: 'Where your browser thinks you are'
+					    }
+					 }]
+				};
 
 				// add markers to map
 				geojson.features.forEach(function(marker) {
