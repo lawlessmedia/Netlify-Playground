@@ -15,7 +15,6 @@
 		if ("geolocation" in navigator) {
 		  /* geolocation is available */
 			navigator.geolocation.getCurrentPosition(function(position) {
-				do_something(position.coords.latitude, position.coords.longitude);
 				document.write('<p>Lat: ' + position.coords.latitude + '</p><p>Long: ' + position.coords.longitude + '</p>');
 			});
 		} else {
