@@ -17,7 +17,7 @@
 <body>
 	<div id="geodata"></div>
 	<div id="map" style="width: 600px; height: 600px;"></div>
-	
+
 	<script>
 		if ("geolocation" in navigator) {
 			/* geolocation is available */
@@ -25,20 +25,21 @@
 				var lat = position.coords.latitude;
 				var long = position.coords.longitude;
 
-				document.getElementById("geodata").innerHTML = '<p>Lat: ' + position.coords.latitude + '</p><p>Long: ' + position.coords.longitude + '</p>'
+				document.getElementById("geodata").innerHTML = '<p>Lat: ' + position.coords.latitude + '</p><p>Long: ' + position.coords.longitude + '</p>';
+
+				// init mapbox
+				mapboxgl.accessToken = 'pk.eyJ1IjoibGF3bGVzc21lZGlhIiwiYSI6ImNqcG00dzAyMzAyMHY0OHBiMHYxdmQ5bncifQ._EI8PZnNYWKIz6v2JxGAlQ';
+				var map = new mapboxgl.Map({
+					container: 'map',
+					style: 'mapbox://styles/mapbox/streets-v10',
+					center: [lat,long],
+					zoom: 12
+				});
 			});
 		} else {
 			/* geolocation IS NOT available */
 			document.getElementById("geodata").innerHTML = 'Geolocation not available.';
 		}
-
-		// init mapbox
-		mapboxgl.accessToken = 'pk.eyJ1IjoibGF3bGVzc21lZGlhIiwiYSI6ImNqcG00dzAyMzAyMHY0OHBiMHYxdmQ5bncifQ._EI8PZnNYWKIz6v2JxGAlQ';
-		var map = new mapboxgl.Map({
-			container: 'map',
-			style: 'mapbox://styles/mapbox/streets-v10',
-			zoom: 12
-		});
 	</script>
 
 </body>
