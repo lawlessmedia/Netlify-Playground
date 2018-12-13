@@ -15,8 +15,9 @@
 
 </head>
 <body>
-	<div id='geodata'></div>
-	<div id='map' style='width: 600px; height: 600px;'></div>
+	<div id="geodata"></div>
+	<div id="map" style="width: 600px; height: 600px;"></div>
+	
 	<script>
 		if ("geolocation" in navigator) {
 			/* geolocation is available */
@@ -36,8 +37,7 @@
 		var map = new mapboxgl.Map({
 			container: 'map',
 			style: 'mapbox://styles/mapbox/streets-v10',
-			zoom: 12,
-			center: [lat, long]
+			zoom: 12
 		});
 	</script>
 
