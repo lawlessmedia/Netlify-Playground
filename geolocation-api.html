@@ -45,14 +45,14 @@
 					container: 'map',
 					style: 'mapbox://styles/mapbox/streets-v10',
 					center: [lat,long],
-					zoom: 12
+					zoom: 3
 				});
 
 				var geojson = {
 				    type: 'Feature',
 				    geometry: {
 				      type: 'Point',
-				      coordinates: [lat, long]
+				      coordinates: [-96, 37.8] // starting position
 				    },
 				    properties: {
 				      title: 'Your Geolocation',
