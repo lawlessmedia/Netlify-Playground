@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	
+	<style>
+	body {
+		font-family: -apple-system,BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+	}
+	.wrapper { 
+		padding: 1rem;
+		display: flex;
+		overflow-x: scroll;
+    	scroll-snap-type: x mandatory;
+	}
+	.wrapper > div, .wrapper > section {
+		background-color: rgba(0,0,0,0.3);
+		box-shadow: 0 3px 10px rgba(0,0,0,0.3);
+		padding: 0 1rem 1rem;
+	}
+
+	.box {
+		position: relative;
+		overflow: hidden;
+		flex-shrink: 0;
+		scroll-snap-align: center;
+		-webkit-overflow-scrolling: touch;
+	    display: inline-block;
+	    min-height: 300px;
+	    width: 200px;
+	    border-radius: 3px;
+	    margin-right: 1rem;
+	}
+	.number {
+		color: rgba(255,255,255,0.3);
+		font-size: 3rem;
+		font-weight: 100;
+		position: absolute;
+		right: -2px;
+		bottom: -12px;
+	}
+	</style>
+
+</head>
+<body>
+	<div class="wrapper">
+		<section class="box box1"><span class="number">1</span></section>
+		<section class="box box2"><span class="number">2</span></section>
+		<section class="box box3"><span class="number">3</span></section>
+		<section class="box box4"><span class="number">4</span></section>
+		<section class="box box5"><span class="number">5</span></section>
+		<section class="box box5"><span class="number">6</span></section>
+	</div>
+</body>
+</html>
