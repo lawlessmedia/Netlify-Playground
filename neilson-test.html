@@ -7,24 +7,58 @@
 	<style>
 	body {
 		font-family: -apple-system,BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+		margin: 0;
+		padding: 0;
 	}
 	.grid {
 		display: grid;
-		grid-template-columns: 100px auto;
-		grid-template-rows: auto 200px;
+		grid-template-columns: 1fr 5fr;
+		grid-template-rows: 1;
 	}
 	nav {
 		background-color: #244b83;
 		color: #fff;
+		grid-row: 1 / 3;
+		height: 100vh;
+		padding: 2rem;
+	}
+	nav a {
+		color: #fff;
+		display: block;
+		padding-top: 1rem;
+		padding-bottom: 1rem;
+		padding-left: 1.8rem;
+		text-decoration: none;
+	}
+	header {
+		margin-bottom: 2rem;
 	}
 	main {
 		background-image: linear-gradient(rgb(174, 179, 182) 0%, rgb(244, 244, 244) 300px);
+		padding: 1rem;
+	}
+	article.shopboards {
+		width: 142px;
+		margin: 8px;
+		padding: 8px 4px;
+		color: #333;
+		background-color: #ccc;
+		list-style-type: none;
+		float: left;
+		text-align: center;
+		line-height: 1.3em;
+		border-radius: 4px;
+	}
+	article.shopboards img {
+		border-top-right-radius: 4px;
+		border-top-left-radius: 4px;
 	}
 	footer {
 		background-image: url('https://www.tomneilsonshapes.com/images/header_bg.jpg');
 		background-repeat: no-repeat;
+		background-size: cover;
 		background-position: center center;
-		min-height: 200px;
+		padding-left: 2rem;
 	}
 	</style>
 
@@ -47,8 +81,11 @@
 	  </nav>
 
 	  <main>
-	  	<article>
-	    	Article
+	  	<article class="shopboards">
+	    	<img src="https://www.tomneilsonshapes.com/images/shopboards/IMG_2126.jpg">
+	    	9'3" X 22 3/4 X 2 7/8<br>
+			"HULL" MODEL<br>
+			$@ Surf Station 
 	  	</article>
 	  </main>
 	  
