@@ -15,6 +15,11 @@
 		grid-template-columns: 1fr 5fr;
 		grid-template-rows: 1;
 	}
+	@media (max-width: 767px) {
+		.grid {
+			grid-template-columns: 6fr;
+		}
+	}
 	nav {
 		background-color: #244b83;
 		color: #fff;
@@ -30,28 +35,47 @@
 		padding-left: 1.8rem;
 		text-decoration: none;
 	}
+	@media (max-width: 767px) {
+		nav {
+			position: absolute;
+			left: -213px;
+		}
+	}
 	header {
 		margin-bottom: 2rem;
+	}
+	@media (max-width: 767px) {
+		header {
+			position: absolute;
+			left: 15rem;
+			top: 1rem;
+		}
 	}
 	main {
 		background-image: linear-gradient(rgb(174, 179, 182) 0%, rgb(244, 244, 244) 300px);
 		padding: 1rem;
 	}
+	@media (max-width: 767px) {
+		main {
+			padding-top: 5rem;
+		}
+	}
 	article.shopboards {
-		width: 142px;
+		background-color: #ccc;
+		border-radius: 4px;
+		color: #333;
+		float: left;
+		font-size: 0.75rem;
+		line-height: 1.3em;
+		list-style-type: none;
 		margin: 8px;
 		padding: 8px 4px;
-		color: #333;
-		background-color: #ccc;
-		list-style-type: none;
-		float: left;
 		text-align: center;
-		line-height: 1.3em;
-		border-radius: 4px;
+		width: 142px;
 	}
 	article.shopboards img {
-		border-top-right-radius: 4px;
-		border-top-left-radius: 4px;
+		border-top-right-radius: 3px;
+		border-top-left-radius: 3px;
 	}
 	footer {
 		background-image: url('https://www.tomneilsonshapes.com/images/header_bg.jpg');
