@@ -9,6 +9,8 @@ Repo for random tests deployed straight to Netlify on commit
 
 <https://gallant-clarke-ae040d.netlify.com/geolocation-api.html> - Geolocation API tests
 
+<https://gallant-clarke-ae040d.netlify.com/google-sheets-json-api> - Google Sheets JSON API display - WSL World Champ info
+
 <https://gallant-clarke-ae040d.netlify.com/grid-test.html> - CSS Grid w/ responsive layout
 
 <https://gallant-clarke-ae040d.netlify.com/mobile-start-screen.html> - Cool mobile start screen concept
