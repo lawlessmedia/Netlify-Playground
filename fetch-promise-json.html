@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	
+	<style>
+	body {
+		font-family: -apple-system,BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+	}
+	</style>
+
+</head>
+<body>
+
+<pre id="data"></pre>
+
+<script>
+	// create todays date as a formatted var for use in API call date range
+	var todaysDate = new Date();
+	apiDate = todaysDate.toLocaleString('en-US', { year: 'numeric', month: '2-digit', day: '2-digit' });
+	//console.log(apiDate); // current date in mm/dd/yyyy format for API call params
+
+	const api_url = 'https://api.tidesandcurrents.noaa.gov/api/prod/datagetter?product=predictions&application=NOS.COOPS.TAC.WL&begin_date=' + apiDate + '&end_date=' + apiDate + '&datum=MLLW&station=8658559&time_zone=lst_ldt&units=english&interval=hilo&format=json';
+
+	// ISS API endpoint for real time lat/long of the International Space Station - uncomment the setInterval function to poll this API
+	//const api_url = 'https://api.wheretheiss.at/v1/satellites/25544';
+	
+	//const api_url = null; // for testing error handling
+
+	// Define the function as an async for promises
+	async function getData() {
+		// Define response as the fetch response data - can use await to store the data into a variable since it's an async function
+		const response = await fetch(api_url);
+		// Set data as the response JSON when it returns - again the async function gives you the await syntax availability to write it in 1 line
+		const data = await response.json();
+
+		// output the JSON data in the PRE tag
+		document.getElementById('data').textContent = JSON.stringify(data, undefined, 2);
+	}
+
+	// Call the async function with catch error handling
+	getData().catch(error=>{
+		console.log('getData error');
+		console.log(error);
+
+		document.getElementById('data').textContent = 'Error fetching data in getData';
+	});
+
+	//polling if you want to refresh data automatically
+	//setInterval(getData, 1000);
+</script>
+
+</body>
+</html>
