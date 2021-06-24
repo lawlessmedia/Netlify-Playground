@@ -11,12 +11,14 @@
 		padding: 0;
 	}
 	header {
-		background-color: #ccc;
+		background-color: #fff;
 		display: flex;
 		flex-basis: 50%;
-		padding: 1rem;
+		opacity: 0.9;
+		padding: 0.5rem;
 		position: fixed;
 		width: 100%;
+		z-index: 100;
 	}
 	header img {
 		background-color: #666;
@@ -31,30 +33,78 @@
 		justify-content: space-evenly; 
 		align-items: center;
 	}
-	.main {
+	header nav a {
+		color: #111;
+		font-size: 0.9rem;
+		font-weight: 500;
+		text-decoration: none;
+	}
+	main {
 		scroll-snap-type: y mandatory;
 		overflow-y: scroll;
 		height: 100vh;
 	}
-	.section {
+	section {
 		align-items: center;
+		background-size: cover;
+		background-repeat: no-repeat;
+		background-position: center center;
 		display: flex;
 		flex-flow: column nowrap;
 		height: 100vh;
 		justify-content: center;
 		scroll-snap-align: start;
 	}
+	.section-title {
+		margin-bottom: 2.25rem;
+	}
+	.section-title.light {
+		color: #fff;
+	}
+	section p:first-of-type {
+		margin-bottom: 0;
+	}
 	#section1 {
 		background-color: #777;
+		background-image: url('https://images.unsplash.com/reserve/O7A9fAvYSXC7NTdz8gLQ_IMGP1039.jpg');
 	}
 	#section2 {
 		background-color: #555;
+		background-image: url('https://images.unsplash.com/photo-1593885430567-4b5721721016?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1600&q=70');
 	}
 	#section3 {
 		background-color: #333;
+		background-image: url('https://images.unsplash.com/photo-1584107662774-8d575e8f3550?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1600&q=70');
 	}
 	#section4 {
 		background-color: #111;
+		background-image: url('https://images.unsplash.com/photo-1510414842594-a61c69b5ae57?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1600&q=70');
+	}
+	.button {
+		background-color: #fff;
+		border-radius: 2rem;
+		color: #111;
+		display: inline-block;
+		font-size: 0.8rem;
+		font-weight: bold;
+		opacity: 0.9;
+		padding: 1rem 5rem;
+		text-decoration: none;
+		text-transform: uppercase;
+	}
+	.button:hover,
+	.button:focus {
+		color: #000;
+		opacity: 1;
+	}
+	section p:not(:first-of-type) .button {
+		background-color: #111;
+		color: #fff;
+		opacity: 0.7;
+	}
+	section p:not(:first-of-type) .button:hover,
+	section p:not(:first-of-type) .button:focus {
+		opacity: 1;
 	}
 	</style>
 
@@ -90,7 +140,7 @@
 		</section>
 
 		<section id="section4" class="section">
-			<h2 class="section-title">Section 4 Title</h2>
+			<h2 class="section-title light">Section 4 Title</h2>
 			<p><a class="button" href="#">Verb Noun</a></p>
 			<p><a class="button" href="#">Verb Noun</a></p>
 		</section>
