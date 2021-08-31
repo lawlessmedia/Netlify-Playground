@@ -166,6 +166,15 @@
 		}
 	}
 
+	.button {
+		background-color: #244b83;
+		border-radius: 5px;
+		color: #fff;
+		padding: 10px 20px;
+		text-decoration: none;
+		text-align: center;
+	}
+
 	/* Main Grid Wrapper styling below */
 	.wrapper { 
 	  display: grid; 
@@ -209,7 +218,7 @@
 	@media screen and ( min-width: 601px ) {
 		.box1 { 
 		  grid-row-start: 1; 
-		  grid-row-end: 3;  
+		  grid-row-end: 3;
 		}
 
 		.box2 { 
@@ -245,6 +254,17 @@
 	  right: -2px;
 	  bottom: -7px;
 	}
+
+	.text-center {
+		display: flex;
+		justify-content: center;
+	}
+
+	.rider-shot {
+		background-image: url('images/neilson-images/von-3x-pro.jpg');
+		background-repeat: no-repeat;
+		background-size: cover;
+	}
 	</style>
 
 </head>
@@ -273,17 +293,97 @@
 	  <main>
 
 	  	<div class="wrapper">
-		  <div class="box box1">longboard image + CTA<span class="number">longboards - 1</span></div>
-		  <div class="box box2">surfboard models lineup shot<span class="number">board lineup - 2</span></div>
-		  <div class="box box3">40 years experience<br>8,000+ boards shaped<span class="number">who's tom - 3</span></div>
-		  <div class="box box4">Cocoa Beach, FL<br>ships worldwide<span class="number">where - 4</span></div>
-		  <div class="box box5">shortboard img + CTA<span class="number">shortboards - 5</span></div>
-		  <div class="box box6">Improve Your Surfing<br>Have More Fun<br>Catch More Waves<br>Support Local Shapers<span class="number">why - 6</span></div>
-		  <div class="box box7">Horizontally scrollable inventory view<span class="number">inventory - 7</span></div>
-		  <div class="box box8">Stock Available<br>$200 Gets Custom Started<span class="number">how much - 9</span></div>
+
+	  	  <!-- Longboards - box1 -->
+		  <div class="box box1">
+		  	<p class="text-center">
+		  		<img src="images/neilson-images/dreamsicle-vertical.png" alt="Dreamsicle Longboard - Neilson Surfboards - Custom Surfboards Florida">
+		  	</p>
+		  	<p class="text-center">
+		  		<a class="button" href="#">View Longboards</a>
+		  	</p>
+
+		  	<span class="number">longboards</span>
+		  </div>
+
+		  <!-- Board Models - box2 -->
+		  <div class="box box2 rider-shot">
+
+		  	<span class="number">neilson surfboards</span>
+		  </div>
+
+		  <!-- About Tom - box3 -->
+		  <div class="box box3">
+		  	<p>With 40 years of shaping experience, Tom Neilson has reached cult status on the East Coast for his custom surfboards and innovative design concepts.</p>
+		  	<p>He ships both stock and custom surfboards all over the world.</p>
+
+		  	<span class="number">about Tom</span>
+		  </div>
+
+		  <!-- Location - box4 -->
+		  <div class="box box4">
+		  	<h4>Shaped and glassed in Cocoa Beach, FL</h4>
+			<p>Built for performance, durability and most of all... fun.</p>
+		  	<p>Ships worldwide <small>(addt'l fees)</small></p>
+
+		  	<span class="number">location</span>
+		  </div>
+
+		  <!-- Shortboards - box5 -->
+		  <div class="box box5">
+		  	<p class="text-center">
+		  		<img src="images/neilson-images/3x-pro-vertical.png" alt="3X Pro - Neilson Surfboards - Custom Surfboards Florida">
+		  	</p>
+		  	<p class="text-center">
+		  		<a class="button" href="#">View Shortboards</a>
+		  	</p>
+
+		  	<span class="number">shortboards</span>
+		  </div>
+
+		  <!-- Why - box6 -->
+		  <div class="box box6">
+		  	<h4>Why Neilson Surfboards</h4>
+		  	Improve Your Surfing<br>
+		  	Have More Fun<br>
+		  	Catch More Waves<br>
+		  	Support Local Shapers
+
+		  	<span class="number">support local shapers</span>
+		  </div>
+
+		  <!-- Inventory - box7 -->
+		  <div class="box box7">
+		  	<p class="text-center">
+		  		<img src="images/neilson-images/inventory-placeholder.png" alt="3X Pro - Neilson Surfboards - Surfboards For Sale" style="width: 100%;height: auto;mix-blend-mode: multiply;">
+		  	</p>
+		  	<p class="text-center">
+		  		<a class="button" href="#">View All Inventory</a>
+		  	</p>
+
+		  	<span class="number">current inventory</span>
+		  </div>
+
+		  <!-- Pricing - box8 -->
+		  <div class="box box8">
+		  	<h4>Stock boards</h4>
+		  	<p>See Current Inventory below</p>
+		  	<h4>Custom boards</h4>
+		  	<p>$200 Gets Your Custom Surfboards Started</p>
+		  	<p class="text-center"><a class="button" href="#">Contact Tom</a></p>
+
+		  	<span class="number">pricing</span>
+		  </div>
+
+		  <!-- ? - box9 -->
 		  <div class="box box9">
-		  	<p>Example Grid Layout from <a href="https://www.poulos.co/" target="_blank">https://www.poulos.co/</a></p>
-		  	<span class="number">9</span>
+		  	<h4>Dealers</h4>
+		  	<p>Neilson Surfboards Dealers</p>
+		  	<p>Support Your Local Shops</p>
+		  	<p class="text-center">
+		  		<a class="button" href="#">View Dealers</a>
+		  	</p>
+		  	<span class="number">dealers</span>
 		  </div>
 		</div>
 
