@@ -22,8 +22,8 @@
 	}
 	</style>
 	
-	<script src='https://api.mapbox.com/mapbox-gl-js/v0.51.0/mapbox-gl.js'></script>
-	<link href='https://api.mapbox.com/mapbox-gl-js/v0.51.0/mapbox-gl.css' rel='stylesheet' />
+	<link href="https://api.mapbox.com/mapbox-gl-js/v3.6.0/mapbox-gl.css" rel="stylesheet">
+	<script src="https://api.mapbox.com/mapbox-gl-js/v3.6.0/mapbox-gl.js"></script>
 
 </head>
 <body>
@@ -32,6 +32,17 @@
 
 	<script>
 		if ("geolocation" in navigator) {
+
+			// init mapbox
+			mapboxgl.accessToken = 'pk.eyJ1IjoibGF3bGVzc21lZGlhIiwiYSI6ImNqcG00dzAyMzAyMHY0OHBiMHYxdmQ5bncifQ._EI8PZnNYWKIz6v2JxGAlQ';
+			const map = new mapboxgl.Map({
+		        container: 'map',
+		        // Choose from Mapbox's core styles, or make your own style with Mapbox Studio
+		        style: 'mapbox://styles/mapbox/streets-v12',
+		        center: [-98.6, 39.8],
+		        zoom: 3
+		    });
+
 			/* geolocation is available */
 			navigator.geolocation.getCurrentPosition(function(position) {
 				var lat = position.coords.latitude;
@@ -39,42 +50,12 @@
 
 				document.getElementById("geodata").innerHTML = '<p>Lat: ' + position.coords.latitude + '</p><p>Long: ' + position.coords.longitude + '</p>';
 
-				// init mapbox
-				mapboxgl.accessToken = 'pk.eyJ1IjoibGF3bGVzc21lZGlhIiwiYSI6ImNqcG00dzAyMzAyMHY0OHBiMHYxdmQ5bncifQ._EI8PZnNYWKIz6v2JxGAlQ';
-				var map = new mapboxgl.Map({
-					container: 'map',
-					style: 'mapbox://styles/mapbox/streets-v10',
-					center: [long,lat],
-					zoom: 3
-				});
+				
 
-				var geojson = {
-					type: 'FeatureCollection',
-  					features: [{
-					    type: 'Feature',
-					    geometry: {
-					      type: 'Point',
-					      coordinates: [long,lat] // starting position
-					    },
-					    properties: {
-					      title: 'Your Geolocation',
-					      description: 'Where your browser thinks you are'
-					    }
-					 }]
-				};
-
-				// add markers to map
-				geojson.features.forEach(function(marker) {
-
-				  // create a HTML element for each feature
-				  var el = document.createElement('div');
-				  el.className = 'marker';
-
-				  // make a marker for each feature and add to the map
-				  new mapboxgl.Marker(el)
-				  .setLngLat(marker.geometry.coordinates)
-				  .addTo(map);
-				});
+			    // Create a default Marker and add it to the map.
+			    const marker1 = new mapboxgl.Marker({ color: 'red' })
+			        .setLngLat([long, lat])
+			        .addTo(map);
 
 			});
 		} else {
