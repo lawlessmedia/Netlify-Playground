@@ -5,20 +5,37 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	
 	<style>
+	:root {
+		--map-height: 100vh;
+		--map-width: 100vw;
+	}
+
 	body {
 		font-family: -apple-system,BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+		padding: 0;
+		margin: 0;
 	}
 	#map {
-		width: 600px;
-		height: 600px;
+		width: var(--map-width);
+		max-width: 600px;
+		height: var(--map-height);
 	}
 	.marker {
 	  background-image: url('images/mapbox-icon.png');
 	  background-size: cover;
-	  width: 50px;
-	  height: 50px;
 	  border-radius: 50%;
 	  cursor: pointer;
+	  height: 50px;
+	  width: 50px;
+	}
+	#geodata {
+		color: white;
+		display: flex;
+		position: absolute;
+		width: var(--map-width);
+		max-width: 600px;
+		z-index: 10000;
+  		justify-content: space-evenly;
 	}
 	</style>
 	
@@ -27,7 +44,7 @@
 
 </head>
 <body>
-	<div id="geodata"></div>
+	<div id="geodata"><p>Finding Lat/Long...</p></div>
 	<div id="map"></div>
 
 	<script>
@@ -38,9 +55,10 @@
 			const map = new mapboxgl.Map({
 		        container: 'map',
 		        // Choose from Mapbox's core styles, or make your own style with Mapbox Studio
-		        style: 'mapbox://styles/mapbox/streets-v12',
+		        //style: 'mapbox://styles/mapbox/streets-v12',
+		        style: 'mapbox://styles/lawlessmedia/cm0h15sdb00pb01qr67hd8m96',
 		        center: [-98.6, 39.8],
-		        zoom: 3
+		        zoom: 2
 		    });
 
 			/* geolocation is available */
@@ -48,14 +66,18 @@
 				var lat = position.coords.latitude;
 				var long = position.coords.longitude;
 
-				document.getElementById("geodata").innerHTML = '<p>Lat: ' + position.coords.latitude + '</p><p>Long: ' + position.coords.longitude + '</p>';
-
-				
+				document.getElementById("geodata").innerHTML = '<p><strong>Lat:</strong> ' + position.coords.latitude + '</p><p><strong>Long:</strong> ' + position.coords.longitude + '</p>';
 
 			    // Create a default Marker and add it to the map.
 			    const marker1 = new mapboxgl.Marker({ color: 'red' })
 			        .setLngLat([long, lat])
 			        .addTo(map);
+
+			    // Re-center the map based on Users LatLong
+			    map.setCenter([long, lat]);
+			    map.zoomTo(8, {
+					duration: 1000
+				});
 
 			});
 		} else {
